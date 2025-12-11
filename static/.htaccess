@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Разрешить доступ к статическим файлам
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Все остальные запросы перенаправлять на главную страницу
+RewriteRule ^ index.html [L]
